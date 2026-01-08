@@ -19,6 +19,5 @@ export default function Footer() {
             <p>Email : jadopte@test.fr</p>
             <p>Tél : 04 72 47 22 00</p>
         </footer>
-        
     );
 }
