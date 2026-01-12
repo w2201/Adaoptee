@@ -1,14 +1,20 @@
-import { ImFacebook2 } from "react-icons/im";
-import { BsTwitterX } from "react-icons/bs";
-import { FiTwitch } from "react-icons/fi";
+import { FaFacebookSquare } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaLinkedin } from "react-icons/fa6";
+import { TbBrandTwitch } from "react-icons/tb";
+
+
 
 export default function Footer() {
     return (
         <footer>
             <h3>ADAOPTE</h3>
-                <p>Notre mission est de trouver un foyer aimant pour chaque animal abandonné et de promouvoir le bien être animal.</p>
-                <ImFacebook2 /> <BsTwitterX /> <FiTwitch />
-            <h3>INFORMATIONS UTILES</h3>
+            <p>Notre mission est de trouver des foyers aimants pour des animaux abandonnés et de promouvoir le bien-être animal.</p>
+            <FaFacebookSquare />
+            <AiFillInstagram />
+            <FaLinkedin />
+            <TbBrandTwitch />
+             <h3>INFORMATIONS UTILES</h3>
                 <p>FAQs</p>
                 <p>Conseils d'adoption</p>
                 <p>Nous contacter</p>
@@ -20,6 +26,5 @@ export default function Footer() {
             <h4>2026 ADAOPTE. Tous droits réservé</h4>
                 <p>Ce site a été développé dans le cadre d'un projet d'ADA TECH SCHOOL</p>
         </footer>
-        
     );
 }
