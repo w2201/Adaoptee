@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
+import Jadopte from './pages/Jadopte';
 
 const router = createBrowserRouter([
     {
@@ -18,9 +19,14 @@ const router = createBrowserRouter([
                 index: true,
                 Component: Home,
             },
+             {
+                path: "jadopte",
+                Component: Jadopte,
+            },
         ],
     },
 ]);
+
 
 
 const queryClient = new QueryClient();
