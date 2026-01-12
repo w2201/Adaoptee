@@ -1,10 +1,12 @@
-import Filter from '../components/Testdivrecherchefilter';
+import LocalisationFilter from '../components/LocalisationFilter';
+import TypesFilter from '../components/TypesFilter';
 
 export default function Jadopte () {
     return (
         <>
-        <p>dbvehzhdegzhd</p>
-        <Filter/>
+        <p>FILTER</p>
+        <TypesFilter />
+        <LocalisationFilter />
         </>
     )
 } 
