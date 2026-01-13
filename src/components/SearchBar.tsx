@@ -1,15 +1,41 @@
 import LocalisationFilter from "./LocalisationFilter";
 import TypesFilter from "./TypesFilter";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchBar(){
 const [city, setCity]= useState('')
-const [value, setValue] = useState('');
+const [value, setValue] = useState('Tous');
+const navigate = useNavigate();
+
+const handleSubmit = (e: FormEvent<HTMLFormElement>): void => { 
+e.preventDefault();
+console.log('Trop cool');
+// const url = new URL ('/jadopte')
+const params = new URLSearchParams();
+if (value){
+    params.set('type', value);
+};
+if (city){
+params.set('city', city);
+}
+
+const url = '/Jadopte?' + params.toString();
+
+console.log(url);
+
+navigate(url);
+}
+
 return (
     <>
+    <form onSubmit={handleSubmit}>
 <TypesFilter value={value} setValue={setValue} />
 <LocalisationFilter city={city} setCity={setCity} />
-
+<button type= 'submit'>Rechercher 🔎</button>
+    </form>
 </>
 )
 }
+
+// /jadopte?type=chien&localisation=Lyon

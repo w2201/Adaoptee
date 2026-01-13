@@ -41,7 +41,7 @@ export default function LocalisationFilter({city, setCity}: cityProps) {
         <p>Localisation</p>
       </div>
       <input
-        type="text"
+        type="text" name="localisation"
         onChange={(e) => setCity(e.target.value)}
         placeholder="Votre ville"></input>
       <p>{isCity(city)}</p>
