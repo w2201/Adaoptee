@@ -1,3 +1,4 @@
+import "./AnimalCardCss.css";
 
 
 export default function AnimalCard() {
