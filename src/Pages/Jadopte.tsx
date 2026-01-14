@@ -17,19 +17,42 @@ export default function Jadopte () {
 
     const [searchParams] = useSearchParams();
     
-    const type = searchParams.get('type');
-    const city = searchParams.get('city');
+    const type = searchParams.get('type') as never;
+    const city = searchParams.get('city') as never;
 
     console.log(type, city);
 
     const {data : response, isLoading, error} = useQuery({
-        queryKey: ["animals"],
+        queryKey: ["animals", type, city],
         queryFn: async () => {
-        const result = await sql(`SELECT animals.*, b.name as breed, shelters.city as shelter, types.name as type FROM animals JOIN breeds as b ON animals.breed_id = b.id JOIN shelters ON animals.shelter_id = shelters.id JOIN types ON b.type_id = types.id`);
-        // if ()
+            let temp;
+            const reqSql = `
+            SELECT animals.*, b.name as breed, shelters.city as shelter, types.name as type FROM animals 
+            JOIN breeds as b ON animals.breed_id = b.id 
+            JOIN shelters ON animals.shelter_id = shelters.id 
+            JOIN types ON b.type_id = types.id
+            `;
+        // const temp2 = await sql(`SELECT animals.*, b.name as breed, shelters.city as shelter, types.name as type FROM animals JOIN breeds as b ON animals.breed_id = b.id JOIN shelters ON animals.shelter_id = shelters.id JOIN types ON b.type_id = types.id`);
+            if (type!=='Tous' && city){
+                temp = await sql(reqSql + `WHERE types.name = ? AND shelters.city = ?`, [type, city]);
+                console.log('if')
+            } 
+            else if (type!=='Tous' && type){
+                temp = await sql(reqSql + `WHERE types.name = ?`, [type]);
+                console.log('else if type')
+            } else if (city!=='' && city){
+                temp = await sql(reqSql + `WHERE shelters.city = ?`, [city]);
+                console.log('else if city')
+            } else {
+                temp = await sql(reqSql);
+                console.log('else')
+            }
+            const result = temp;
+
         if (!result.success) throw new Error(result.error);
         return result.data;
-        },
+    },
+        
     })
 
      if (isLoading) return <p>Chargement...</p>;
