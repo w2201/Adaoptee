@@ -19,14 +19,13 @@ export default function LocalisationFilter({city, setCity}: cityProps) {
 
   if (isLoading) return <p>Chargement...</p>;
   if (error) return <p>Erreur : {error.message}</p>;
-  console.log(response);
 
   function isCity(text: string){
     const cityArray =[];
     for(const city of response){
       cityArray.push(city.city);
     }
-    console.log(cityArray);
+
     const found = cityArray.find(cityFound => cityFound === text);
     return found ?? 'Aucun résultat';
   }

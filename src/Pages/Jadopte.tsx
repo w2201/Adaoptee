@@ -32,7 +32,7 @@ export default function Jadopte () {
             JOIN shelters ON animals.shelter_id = shelters.id 
             JOIN types ON b.type_id = types.id
             `;
-            
+
             if (type!=='Tous' && city){
                 temp = await sql(reqSql + `WHERE types.name = ? AND shelters.city = ?`, [type, city]);
             } 
@@ -53,6 +53,16 @@ export default function Jadopte () {
 
      if (isLoading) return <p>Chargement...</p>;
      if (error) return <p>Erreur : {error.message}</p>;
+
+//      function isCity(text: string){
+//     const cityArray =[];
+//     for(const city of response){
+//       cityArray.push(city.city);
+//     }
+
+//     const found = cityArray.find(cityFound => cityFound === text);
+//     return found ?? 'Aucun résultat';
+//   }
 
     return (
         <>

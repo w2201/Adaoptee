@@ -39,7 +39,6 @@ export default function TypesFilter({value, setValue} : typeProps) {
       <div className="type">
         <p>Type d'animal</p>
       </div>
-      <p>{value}</p>
       <select name="animalTypes" id="animalTypes" onChange={(e) => setValue(e.target.value)}>
         {value === "Tous" ? <option value="Tous" selected>Tous</option> : <option value="Tous">Tous</option>}
         {response?.data.map((element: type) => (
