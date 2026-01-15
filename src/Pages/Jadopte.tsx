@@ -1,21 +1,11 @@
 import SearchBar from '../components/SearchBar';
 import { useSearchParams } from 'react-router-dom';
 import Container from '../components/ContainerAnimalsCards';
-// import { useState } from 'react';
 import { sql } from "../lib/sql";
 import { useQuery } from "@tanstack/react-query";
 
 export default function Jadopte () {
-     interface type {
-    id: number;
-    type: string;
-    name: string;
-    breed: string;
-    age: number;
-    shelter: string;
-    description: string
-  }
-
+     
     const [searchParams] = useSearchParams();
     
     const type = searchParams.get('type') as never;
@@ -35,18 +25,19 @@ export default function Jadopte () {
             `;
 
             if (type!=='Tous' && city){
-                temp = await sql(reqSql + `WHERE types.name = ? AND shelters.city = ?`, [type, city]);
+                temp = await sql(reqSql + `WHERE types.name = ? AND shelters.city = ? LIMIT 8`, [type, city]);
             } 
             else if (type!=='Tous' && type){
-                temp = await sql(reqSql + `WHERE types.name = ?`, [type]);
+                temp = await sql(reqSql + `WHERE types.name = ? LIMIT 8`, [type]);
             } else if (city!=='' && city){
-                temp = await sql(reqSql + `WHERE shelters.city = ?`, [city]);
+                temp = await sql(reqSql + `WHERE shelters.city = ? LIMIT 8`, [city]);
             } else {
-                temp = await sql(reqSql);
+                temp = await sql(reqSql + `LIMIT 8`);
             }
             const result = temp;
 
         if (!result.success) throw new Error(result.error);
+        console.log(result.data)
         return result.data;
     },
         
@@ -55,28 +46,10 @@ export default function Jadopte () {
      if (isLoading) return <p>Chargement...</p>;
      if (error) return <p>Erreur : {error.message}</p>;
 
-//      function isCity(text: string){
-//     const cityArray =[];
-//     for(const city of response){
-//       cityArray.push(city.city);
-//     }
-
-//     const found = cityArray.find(cityFound => cityFound === text);
-//     return found ?? 'Aucun résultat';
-//   }
-
     return (
         <>
         <SearchBar />
-        <Container />
-        {response.map((el : type) => (<div key={el.name} style={{borderStyle: 'solid'}}>
-            <p id='type'>{el.type}</p>
-            <p id='name'>{el.name}</p>
-            <p id='breed'>{el.breed}</p>
-            <p id='age'>{el.age}</p>
-            <p id='localisation'>{el.shelter}</p>
-            <p id='description'>{el.description}</p>
-            </div>))}
+        <Container animals={response}/>
         </>
     )
 } 

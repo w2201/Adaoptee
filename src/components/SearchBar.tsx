@@ -10,8 +10,7 @@ const navigate = useNavigate();
 
 const handleSubmit = (e: FormEvent<HTMLFormElement>): void => { 
 e.preventDefault();
-console.log('Trop cool');
-// const url = new URL ('/jadopte')
+
 const params = new URLSearchParams();
 if (value){
     params.set('type', value);

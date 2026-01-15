@@ -1,5 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
-import { sql } from "../lib/sql.tsx";
 import type { Dispatch, SetStateAction } from "react";
 
 
@@ -8,27 +6,6 @@ interface cityProps {
   setCity: Dispatch<SetStateAction<string>>
 }
 export default function LocalisationFilter({city, setCity}: cityProps) {
-  const { data: response, isLoading, error} = useQuery({
-    queryKey: ["shelters"],
-    queryFn: async () => {
-      const result = await sql("SELECT city FROM shelters");
-      if (!result.success) throw new Error(result.error);
-      return result.data;
-    },
-  });
-
-  if (isLoading) return <p>Chargement...</p>;
-  if (error) return <p>Erreur : {error.message}</p>;
-
-  function isCity(text: string){
-    const cityArray =[];
-    for(const city of response){
-      cityArray.push(city.city);
-    }
-
-    const found = cityArray.find(cityFound => cityFound === text);
-    return found ?? 'Aucun résultat';
-  }
 
   return (
     <ul>
@@ -39,7 +16,6 @@ export default function LocalisationFilter({city, setCity}: cityProps) {
         value= {city} type="text" name="localisation"
         onChange={(e) => setCity(e.target.value)}
         placeholder="Votre ville"></input>
-      {isCity(city)}
     </ul>
   );
 }
