@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
+import SearchBar from "../components/SearchBar";
 
 
 
@@ -14,6 +15,7 @@ export default function Home() {
                 Trouvez votre compagnon idéal parmi nos animaux disponibles à l'adoption.
             </p>
             </div>
+            <SearchBar />
         </section>
 
             <section>
