@@ -39,7 +39,7 @@ export default function AnimalCard({
 
         <p className="animal-description">{description}</p>
 
-        <button className="animal-button">
+        <button className="animal-button" onClick={() => alert(name +' ' + type)}>
           Rencontrer
         </button>
       </div>
