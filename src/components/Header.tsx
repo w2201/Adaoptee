@@ -1,10 +1,12 @@
+import {NavLink} from "react-router-dom";
+
 export default function Header(){
     return (
         <header>
-            <h1>Adaopte</h1>
+            <p>Adaopte</p>
             <nav>
-                <a href="/">Accueil</a>
-                </nav>
+                <NavLink to={'/'}>Home</NavLink>
+            </nav>
         </header>
     );
 }
