@@ -8,6 +8,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import NotFound from "./Pages/NotFound";
 import Layout from "./components/Layout";
 import Jadopte from './Pages/Jadopte';
+import "./index.css";
 
 const router = createBrowserRouter([
     {
