@@ -1,25 +1,23 @@
 import { Link } from "react-router-dom";
 import { animals } from "../data/animals";
 import SearchBar from "../components/SearchBar";
-import "./Home.css";
+import "../components/SearchBar.css"
+
+
 
 export default function Home() {
-  return (
-    <main>
-      <section
-        className="hero"
-        aria-label="Présentation de la plateforme d'adoption"
-      >
-        <div className="hero-content">
-          <h1>🐾🐾Bienvenue sur Adaopte🐾🐾</h1>
-          <p>
-            Donnons-leur autant qu'ils nous apportent. Chaque jour, des milliers
-            d'animaux attendent une famille aimante. Trouvez votre compagnon
-            idéal parmi nos animaux disponibles à l'adoption.
-          </p>
-        </div>
+    return (
+        <main>
+            <section className="hero" aria-label="Présentation de la plateforme d'adoption">
+                <div className="hero-content">
+            <h1>🐾🐾Bienvenue sur Adaopte🐾🐾</h1>
+            <p>Donnons-leur autant qu'ils nous apportent.
+                Chaque jour, des milliers d'animaux attendent une famille aimante.
+                Trouvez votre compagnon idéal parmi nos animaux disponibles à l'adoption.
+            </p>
+            </div>
+        </section>
         <SearchBar />
-      </section>
 
       <section className="animals-section">
         <h2>Nos animaux à adopter</h2>
