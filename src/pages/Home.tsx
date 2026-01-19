@@ -24,8 +24,8 @@ export default function Home() {
       </section>
       <SearchBar />
       <section className="animals-section">
-        <h2>Nos animaux à adopter</h2>
-        <p>
+        <h2 className="grid-titles">Nos animaux à adopter</h2>
+        <p className="grid-descriptions">
           Découvrez en images tous nos animaux qui attendent une famille
           aimante. Chaque photo raconte une histoire et un espoir.
         </p>
@@ -61,9 +61,9 @@ export default function Home() {
       </section>
       {/* Processus d'adoption */}
       <section className="how-it-works">
-        <h2>Comment ça marche</h2>
-        <p className="subtitle">
-          Adopter un animal est un engagement sérieux et à long terme.
+        <h2 className="grid-titles">Comment ça marche</h2>
+        <p className="grid-descriptions">
+          Adopter un animal est un engagement sérieux et à long terme. Voici notre processus d'adoption en quelques étapes simples.
         </p>
 
         <div className="steps">
