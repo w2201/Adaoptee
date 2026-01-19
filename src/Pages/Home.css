@@ -1,7 +1,8 @@
 @import url("../pages/Fonts.css");
 
 :root{
-  --text-color: #333; 
+  --title-color: #484848; 
+  --description-color: #5d5d5d; 
 }
 
 .hero {
@@ -34,16 +35,17 @@ h2 {
   font-family: Amatic;
   font-size: 3rem;
   font-weight: bold;
-  color: var(--text-color);
+  color: var(--title-color);
 }
 
 .grid-descriptions {
   margin: auto;
+  margin-bottom: 50px;
   font-family: Roboto;
-  font-family: 1rem;
-  font-weight: 400;
-  color: var(--text-color);
-  max-width: 50vw;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--description-color);
+  max-width: 40vw;
 }
 
 
@@ -201,14 +203,8 @@ h2 {
   background: #fff;
 }
 
-.call-to-action h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
 .call-to-action p {
   color: #666;
-  margin-bottom: 2rem;
 }
 
 .cta-buttons {
@@ -223,6 +219,7 @@ h2 {
   padding: 0.8rem 1.8rem;
   border-radius: 999px;
   border: none;
+  font-family: Roboto;
   font-size: 0.95rem;
   cursor: pointer;
   transition:
@@ -253,6 +250,20 @@ h2 {
   background: #27ae60;
   color: white;
 }
+
+.step-card, .title-steps {
+  font-family: Roboto;
+}
+
+
+.title-steps {
+  margin: auto;
+  width: 150px;
+  color: #222;
+  text-align: center;
+  line-height: 1.8rem;
+}
+
 
 /* RESPONSIVE */
 

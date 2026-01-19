@@ -69,33 +69,33 @@ export default function Home() {
         <div className="steps">
           <div className="step-card">
             <span className="icon">🔍</span>
-            <h3>1.Trouvez votre compagnon</h3>
-            <p>Parcourez notre base de données et utilisez les filtres.</p>
+            <h3 className="title-steps">1. Trouvez votre compagnon</h3>
+            <p>Parcourez notre base de données disponibles et utilisez les filtres pour trouver celui qui correspond à votre mode de vie.</p>
           </div>
 
           <div className="step-card">
             <span className="icon">📝</span>
-            <h3>2.Remplissez une demande</h3>
-            <p>Soumettez votre formulaire d’adoption.</p>
+            <h3 className="title-steps">2. Remplissez une demande</h3>
+            <p>Soumettez votre formulaire d’adoption pour l'animal qui vous intéresse. Nous examinons chaque demande avec soin</p>
           </div>
 
           <div className="step-card">
             <span className="icon">🤝</span>
-            <h3>3. Rencontrez l’animal</h3>
-            <p>Visitez le refuge pour vérifier la compatibilité.</p>
+            <h3 className="title-steps">3. Rencontrez l’animal</h3>
+            <p>Visitez le refuge pour rencontrer l'animal et voir si vous êtes compatibles. C'est une étape essentielle du processus</p>
           </div>
 
           <div className="step-card">
             <span className="icon">🏠</span>
-            <h3>4. Bienvenue à la maison</h3>
-            <p>Accueillez votre nouvel ami chez vous.</p>
+            <h3 className="title-steps">4. Bienvenue à la maison</h3>
+            <p>Une fois votre demande approuvée, vous pouvez accueillir votre nouvel ami chez vous. Nous restons disponibles pour vous conseiller</p>
           </div>
         </div>
       </section>{" "}
       {/* fine how-it-works */}
       <section className="call-to-action">
-        <h2>Prêt·e à changer une vie ?</h2>
-        <p>Adoptez, partagez, soutenez. Chaque geste compte.</p>
+        <h2 className="grid-titles">Prêt·e à changer une vie ?</h2>
+        <p className="grid-descriptions">Adoptez, partagez, soutenez. Chaque geste compte. Que vous ouvriez votre foyer ou votre coeur, vous pouvez offrir une seconde chance à un animal abandonné.</p>
 
         <div className="cta-buttons">
           <Link to="/jadopte" className="btn primary">
