@@ -1,18 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+@import url("../pages/Fonts.css");
+
+:root{
+  --title-color: #484848; 
+  --description-color: #5d5d5d; 
+}
 
 .hero {
   padding: 8rem 6rem;
   min-height: 60vh;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-    url("../images/background.jpg");
+  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+  url("../images/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 12px;
   text-align: center;
   color: white;
-  font-family: "Amatic SC", cursive;
+  font-family: Amatic;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,15 +29,25 @@
   margin: 0 0 1rem 0;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
 }
-.animals-section h2 {
-  font-size: 2rem;
-  font-weight: 300;
-  margin: 0 0 1rem 0;
+
+.grid-titles {
+  margin-bottom: 50px;
+  font-family: Amatic;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--title-color);
 }
-.animals-section p {
-  font-size: 1rem;
-  font-weight: 100;
+
+.grid-descriptions {
+  margin: auto;
+  margin-bottom: 50px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--description-color);
+  max-width: 40vw;
 }
+
 
 .hero p {
   font-size: 1.8rem;
@@ -122,17 +137,19 @@
 .see-all {
   display: inline-block;
   margin-top: 3rem;
-  padding: 1rem 2.5rem;
-  background: white;
-  color: #333;
+  padding: 1rem 1.1rem;
+  background: #333;
+  font-family: Roboto;
+  font-size: 0.8rem;
+  color: white;
   text-decoration: none;
   border-radius: 30px;
   font-weight: 600;
   transition: all 0.3s ease;
+  will-change: contents;
 }
 
 .see-all:hover {
-  background: #f0f0f0;
   transform: translateY(-2px);
 }
 
@@ -141,11 +158,6 @@
   padding: 4rem 2rem;
   text-align: center;
   background: #fafafa;
-}
-
-.how-it-works h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
 }
 
 .subtitle {
@@ -191,14 +203,8 @@
   background: #fff;
 }
 
-.call-to-action h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
 .call-to-action p {
   color: #666;
-  margin-bottom: 2rem;
 }
 
 .cta-buttons {
@@ -213,6 +219,7 @@
   padding: 0.8rem 1.8rem;
   border-radius: 999px;
   border: none;
+  font-family: Roboto;
   font-size: 0.95rem;
   cursor: pointer;
   transition:
@@ -243,6 +250,20 @@
   background: #27ae60;
   color: white;
 }
+
+.step-card, .title-steps {
+  font-family: Roboto;
+}
+
+
+.title-steps {
+  margin: auto;
+  width: 150px;
+  color: #222;
+  text-align: center;
+  line-height: 1.8rem;
+}
+
 
 /* RESPONSIVE */
 
